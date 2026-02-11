@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand base */
+:root{
+  --ox-red:#CC0000;
+  --ox-dark:#191919;
+  --ox-light:#F8F8F8;
+  --ox-purple:#5B2CF1;
+}
+
+/* Nice selection */
+::selection{ background: rgba(204,0,0,.25); }
+
+/* Subtle film grain */
+.grain:before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.14'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
+
+/* Smooth fade-up animation */
+.reveal{
+  opacity:0;
+  transform: translateY(18px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+.reveal.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* Glow cards */
+.glow{
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06),
+    0 16px 50px rgba(0,0,0,.55);
+}
+
+/* Fancy border */
+.border-grid{
+  background:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}

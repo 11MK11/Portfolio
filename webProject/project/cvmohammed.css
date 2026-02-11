@@ -1,0 +1,807 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #000000;
+    color: white;
+}
+/* Navigation Bar Styles */
+.navbar {
+    background: #000000;
+    color: white;
+    padding: 0 20px;
+    line-height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: width 0.5s;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+
+.nav-link:hover {
+    color: #f0f0f0;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        padding: 15px;
+    }
+
+    .nav-icon {
+        display: block;
+    }
+}
+
+/* Home Section */
+#header {
+    width: 100%;
+    height: 100vh;
+}
+
+.home {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.home-content div {
+    flex: 1;
+}
+
+.home-content img {
+    width: 400px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.home-content .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+#first {
+    padding-top: 70px;
+}
+
+.text-container span{
+    color: red;
+}
+
+/* Buttons */
+.btn {
+    padding: 5px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #555;
+}
+
+.btn-secondary {
+    background-color: #f00;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #fff;
+    transition: border-color 0.3s;
+    color: inherit;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+
+/* Container and overall styling */
+.container {
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Row and Column Styling */
+.row {
+    padding: 5px 0;
+}
+
+/* Link Styling */
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* removes underline from links */
+    color: white; /* sets the text color to white */
+}
+
+/* Hover effect for links */
+a:hover {
+    color: #ff0000; /* slightly lighter white when hovered */
+}
+
+/* skills */
+.container1{
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    padding: 75px 95px;
+    margin-left: 120px;
+}
+
+.heading1{
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+}
+
+.bar{
+    font-size: 23px;
+}
+
+.technical-bars .bar {
+    margin-top: 40px 0;
+    position: relative;
+}
+
+.technical-bars .bar:first-child {
+    margin-top: 0;
+}
+.technical-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.technical-bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.technical-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.technical-bars .bar .progress-line{
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 10px;
+    background-color: #ffffff;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100%{
+    transform: scaleX(1);
+    }
+}
+
+.technical-bars .bar .progress-line span{
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line.html span{
+    width: 90%;
+}
+
+.progress-line.css span{
+    width: 60%;
+}
+
+.progress-line.javascript span{
+    width: 85%;
+}
+
+.progress-line.python span{
+    width: 50%;
+}
+
+.progress-line.react span{
+    width: 90%;
+}
+
+.progress-line span::after{
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #e00;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line.html span::after{
+    content: "90%";
+}
+
+.progress-line.css span::after{
+    content: "70%";
+}
+
+.progress-line.javascript ::after{
+    content: "80%";
+}
+
+.progress-line.python span::after{
+    content: "75%";
+}
+
+.progress-line.react span::after{
+    content: "78%";
+}
+
+.progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: red;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+@keyframes showText {
+    100% {
+    opacity: 1;
+    }
+}
+
+.radial-bars{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.radial-bars .radial-bar{
+    width: 50%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.radial-bars .radial-bar svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 160px;
+    height: 160px;
+}
+
+.radial-bars .radial-bar .progress-bar{
+    stroke-width: 10;
+    fill: transparent;
+    stroke: white;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+@keyframes animate-bar {
+    100% {
+    stroke-dashoffset: -1;
+    }
+}
+
+.path{
+    stroke-width: 10;
+    stroke: red;
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+
+.path-1{ animation: animate-path1 1s 1s linear forwards; }
+.path-2{ animation: animate-path2 1s 1s linear forwards; }
+.path-3{ animation: animate-path3 1s 1s linear forwards; }
+.path-4{ animation: animate-path4 1s 1s linear forwards; }
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: calc(502 - (75 / 100 * 502));
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: calc(502 - (87 / 100 * 502));
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: calc(502 - (76 / 100 * 502));
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: calc(502 - (84 / 100 * 502));
+    }
+}
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.radial-bar .text{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50px);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.technical-bars .bar i {
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+.technical-bars .bar .info {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+}
+
+.progress-bar {
+    stroke-width: 10;
+    fill: transparent;
+    stroke: #fff; /* White color */
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    stroke-linecap: round;
+    /* Removed animation for static display */
+}
+
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+.text {
+    position: absolute;
+    left: 50%;
+    bottom: 10px; /* Adjust as needed to position the text below the circle */
+    transform: translateX(-50%);
+    font-size: 1em; /* Adjust size as needed */
+    color: #fff; /* White color for better visibility */
+    /* ... other styles ... */
+}
+
+/* Wrapper for both technical and professional skills */
+.skills-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the child elements horizontally */
+    align-items: flex-start; /* Aligns items to the top */
+    padding: 20px; /* Adds some padding around the elements */
+}
+
+.heading1, .percentage, .text {
+    font-size: 17px;
+}
+
+.technical-skills{
+    margin-left: -800px;
+}
+
+.professional-skills{
+    margin-right: -600px;
+}
+
+.radial-bar{
+    padding: 30px;
+}
+
+.radial-bars .radial-bar .progress-bar,
+.radial-bars .radial-bar .path {
+    stroke-width: 10;
+    fill: transparent;
+    stroke-dasharray: 502; /* Circumference of the circle */
+    stroke-dashoffset: 502; /* Initially full circumference */
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-inner {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-about, .footer-nav, .footer-contact {
+    flex: 1;
+    min-width: 200px; /* Adjust minimum width as needed */
+    margin: 10px;
+}
+
+.footer-about h3, .footer-nav h3, .footer-contact h3 {
+    margin-bottom: 10px;
+    color: red; /* Adjust the color to fit your design */
+}
+
+.footer-about p {
+    color: #f0f0f0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-nav ul li a:hover {
+    color: red; /* Adjust the hover color to fit your design */
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #f0f0f0;
+}
+
+.footer-contact ul li i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #333; /* Adjust border color to fit your design */
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom .social-icons {
+    margin-top: 10px;
+}
+
+.footer-bottom .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+    color: inherit;
+}
+
+.footer-bottom .social-icons a:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-about, .footer-nav, .footer-contact {
+        margin-bottom: 20px;
+    }
+}
+
+/* Contact Me Section */
+.contact-me {
+    padding: 40px 20px;
+    text-align: center;
+    background: #111; /* Slightly lighter than the body background for contrast */
+    color: white;
+}
+
+.contact-me h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff; /* White color text */
+}
+
+.contact-me p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ddd; /* Light grey color for the text */
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    height: 150px; /* Larger text area for message content */
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    resize: vertical; /* Allows the user to vertically resize the textarea in the browser */
+}
+
+.contact-form button {
+    cursor: pointer;
+    padding: 10px 15px;
+    color: white;
+    background-color: red; /* Red color for button */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: darkred; /* Slightly darker red on hover */
+}
+
+/* Responsive adjustments for the contact form */
+@media (max-width: 768px) {
+    .contact-form form {
+        width: calc(100% - 40px); /* Adjust width for smaller screens */
+    }
+}
+
+/* Responsive adjustments for the contact form */
+@media (max-width: 768px) {
+    .contact-form form {
+        width: calc(100% - 40px); /* Adjust width for smaller screens */
+    }
+}
+
+/* Example to adjust the navigation menu on smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-item {
+        margin: 5px 0; /* Adds a little space between menu items */
+    }
+}
+
+/* Example to adjust the home section for smaller screens */
+@media screen and (max-width: 768px) {
+    .home-content {
+        flex-direction: column; /* Stack the elements */
+    }
+    
+    .home-content img {
+        margin-top: 20px; /* Adds some space between the text and image */
+        width: 100%; /* Makes the image responsive */
+    }
+}
+
+/* Example to adjust the footer for smaller screens */
+@media screen and (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column; /* Stacks footer content */
+    }
+}
+
+/* Ensuring the skill sections stack on smaller screens */
+@media screen and (max-width: 768px) {
+.technical-skills{
+flex-direction: row;
+}
+}
+
+@media screen and (max-width: 768px) {
+    .skills-wrapper {
+        flex-direction: column;
+    }
+    .technical-skills{
+        margin: 0;
+        margin-left: -80px;
+        margin-bottom: 70px;
+    }
+    .professional-skills{
+        margin: 0;
+        margin-left: -140px;
+    }
+    form{
+        margin-left: 20px;
+        }
+}
