@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #000000;
+    color: white;
+}
+/* Navigation Bar Styles */
+.navbar {
+    background: #000000;
+    color: white;
+    padding: 0 20px;
+    line-height: 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 50px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    padding: 0 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: red;
+    transition: width 0.5s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-link:hover {
+    color: #f0f0f0;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background: #333;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        padding: 15px;
+    }
+
+    .nav-icon {
+        display: block;
+    }
+}
+/* form */
+.form-container {
+    max-width:auto;
+    background-color: #000000;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #fff;
+}
+
+.form-container h1 {
+    font-size: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+label p {
+    font-weight: normal;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #d00;
+}
+
+.contact-form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+}
+a,
+button {
+    cursor: pointer;
+    outline: none; /* remove outline */
+    transition: all 0.3s ease; /* smooth transition for all states */
+}
+
+button:focus,
+a:focus {
+    outline: none; /* ensuring focus doesn't affect the look */
+}
+
+/* Form Enhancements */
+.form-container {
+    background-color: #f7f7f7; /* lighter background for form */
+    color: #333; /* matching color for text */
+    padding: 40px; /* more padding for better spacing */
+    border-radius: 8px; /* rounded corners for modern look */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* stronger shadow for more depth */
+}
+
+.form-container h1 {
+    font-size: 24px; /* larger font size for heading */
+    margin-bottom: 20px; /* space after heading */
+    color: #333; /* color for heading */
+    text-align: center; /* center aligning the title */
+}
+
+/* Input and Button Enhancements */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px; /* more padding for larger touch area */
+    border: 2px solid #ddd; /* solid border */
+    margin-bottom: 20px; /* space after each input */
+    border-radius: 5px; /* rounded corners */
+    font-size: 16px; /* larger font size */
+    transition: border-color 0.3s; /* transition for interaction */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #ff0000; /* highlight color when focused */
+}
+
+.form-group button {
+    background-color: #000000; /* deeper blue */
+    padding: 15px 20px; /* padding for button */
+    font-size: 18px; /* larger text for button */
+    text-transform: uppercase; /* uppercase text */
+    letter-spacing: 1px; /* spacing between letters */
+    border: none; /* no border */
+    border-radius: 5px; /* rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* shadow for depth */
+}
+
+.form-group button:hover,
+.form-group button:focus {
+    background-color: #ff0000; /* darker on hover/focus */
+}
+
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* stack items vertically */
+        align-items: flex-start; /* align items */
+    }
+
+    .nav-logo,
+    .nav-menu {
+        margin-top: 10px; /* margin for mobile */
+    }
+
+    .form-container {
+        padding: 20px; /* less padding on smaller screens */
+    }
+}
+
+#first{
+    padding-top: 150px;
+}
+
+/* Additional Utilities */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Utility classes for margin and padding */
+.mt-2 { margin-top: 20px; }
+.mb-2 { margin-bottom: 20px; }
+.pt-2 { padding-top: 20px; }
+.pb-2 { padding-bottom: 20px; }
+
+/* Footer Styles */
+.site-footer {
+    background-color: #000000;
+    color: white;
+    padding: 40px 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-inner {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-about, .footer-nav, .footer-contact {
+    flex: 1;
+    min-width: 200px; /* Adjust minimum width as needed */
+    margin: 10px;
+}
+
+.footer-about h3, .footer-nav h3, .footer-contact h3 {
+    margin-bottom: 10px;
+    color: red; /* Adjust the color to fit your design */
+}
+
+.footer-about p {
+    color: #f0f0f0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-nav ul li a:hover {
+    color: red; /* Adjust the hover color to fit your design */
+}
+
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #f0f0f0;
+}
+
+.footer-contact ul li i {
+    margin-right: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #333; /* Adjust border color to fit your design */
+}
+
+.footer-bottom p {
+    margin: 10px 0;
+}
+
+.footer-bottom .social-icons {
+    margin-top: 10px;
+}
+
+.footer-bottom .social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 2px solid #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+    color: inherit;
+}
+
+.footer-bottom .social-icons a:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+
+.footer-contact a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-contact a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-about, .footer-nav, .footer-contact {
+        margin-bottom: 20px;
+    }
+}
